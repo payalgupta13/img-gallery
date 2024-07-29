@@ -39,14 +39,30 @@
             "./pictures/r6.jpeg",
             "./pictures/np.webp"
         ];
-        let imgindex =0;
-        function prev(){
-            if(imgIndex==0){
-                imgIndex =images.length -1;
+    
+
+        let imgIndex = 0;
+
+        function prev() {
+            if (imgIndex === 0) {
+            imgIndex = images.length - 1;
             }
-            else{
+            else {
                 imgIndex--;
             }
+            const imgElement = document.getElementById('img');
+            imgElement.src = images[imgIndex];
+        }
+
+        function next(){
+            if(imgIndex == images.length - 1) {
+                imgIndex = 0;
+            }
+            else{
+                imgIndex++;
+            }
+            const imgElement = document.getElementById('img');
+            imgElement.src = images[imgIndex];
         }
     </script>
 </body>
